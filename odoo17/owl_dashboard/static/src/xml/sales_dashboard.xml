@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="owl_dashboard.CrmDashboard">
+        <div class="vh-100 overflow-auto bg-muted">
+            <div class="row m-3">
+                <div class="col-lg-7">
+                   <div class="row">
+                      <div class="col m-0 p-0">
+                          <div class="shadow-sm border m-2 p-4 bg-white">
+                             <div class="d-flex align-items-center justify-content between">
+                                <!-- <h1>Partners Count: <t t-esc="state.partnersCount" /></h1> -->
+                                <h1 class="text-primary fw-bold">Custom sales dashboard</h1>
+                                <div class="selector" style="margin-left:20rem;">
+                                   <select class ="form-select">
+                                       <option value="0">Select period</option>
+                                       <option value="7">Last 7 days</option>
+                                       <option value="30">Last 30 days</option>
+                                       <option value="90">Last 3 months</option>
+                                   </select>
+                                </div>
+                             </div>
+                          </div>
+                      </div>
+                   </div>
+
+                    <div class="row mt-5">
+                        <div class="col-sm-3">
+                             <canvas t-ref="secondChart"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4" style="margin-left:4rem;">
+                    <canvas t-ref="chart"/>
+                </div>
+                
+            </div>
+
+            <!-- <div class="row m-3">
+              <div class="col-lg-5">
+                   <div class="row">
+                      <div class="col m-0 p-0">
+                          <div class="shadow-sm border m-2 p-4 bg-white">
+                             <div class="d-flex align-items-center justify-content between">
+
+                                <h1 class="text-primary fw-bold">Custom dashboard</h1>
+                                <div class="selector" style="margin-left:15rem;">
+                                   <select class ="form-select">
+                                       <option value="0">Select period</option>
+                                       <option value="7">Last 7 days</option>
+                                       <option value="30">Last 30 days</option>
+                                       <option value="90">Last 3 months</option>
+                                   </select>
+                                </div>
+                             </div>
+                          </div>
+                      </div>
+                   </div>
+                </div>
+            </div> -->
+        </div>
+    </t>
+</templates>

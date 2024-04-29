@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_registration,headsuptail.user_registration,model_user_registration,base.group_user,1,1,1,1
+access_open_wizard,headsuptail.open_wizard,model_open_wizard,base.group_user,1,1,1,1
+access_books_books,access_books_books,model_books_books,base.group_user,1,1,1,1
+access_students_students,access_students_students,model_students_students,base.group_user,1,1,1,1
+access_teacher_teacher,access_teacher_teacher,model_teacher_teacher,base.group_user,1,1,1,1

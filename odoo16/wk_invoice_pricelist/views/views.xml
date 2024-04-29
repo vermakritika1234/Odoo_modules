@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="view_account_move_form_inherit">
+      <field name="name">account.move list</field>
+      <field name="model">account.move</field>
+      <field name="inherit_id" ref="account.view_move_form"/>
+      <field name="arch" type="xml">
+         <xpath expr="//field[@name='payment_reference']" position="after">
+                    <field name="pricelist_id" />
+                </xpath>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="wk_invoice_pricelist.action_window">
+      <field name="name">wk_invoice_pricelist window</field>
+      <field name="res_model">wk_invoice_pricelist.wk_invoice_pricelist</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="wk_invoice_pricelist.action_server">
+      <field name="name">wk_invoice_pricelist server</field>
+      <field name="model_id" ref="model_wk_invoice_pricelist_wk_invoice_pricelist"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="wk_invoice_pricelist" id="wk_invoice_pricelist.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="wk_invoice_pricelist.menu_1" parent="wk_invoice_pricelist.menu_root"/>
+    <menuitem name="Menu 2" id="wk_invoice_pricelist.menu_2" parent="wk_invoice_pricelist.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="wk_invoice_pricelist.menu_1_list" parent="wk_invoice_pricelist.menu_1"
+              action="wk_invoice_pricelist.action_window"/>
+    <menuitem name="Server to list" id="wk_invoice_pricelist" parent="wk_invoice_pricelist.menu_2"
+              action="wk_invoice_pricelist.action_server"/>
+-->
+  </data>
+</odoo>

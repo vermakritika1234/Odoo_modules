@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template inherit_id="sale.report_saleorder_document" id="sale_report_inherit">
+       <xpath expr="//div[@class='row mt-4 mb-4']" position="after">
+            <div class="row mt32 mb32" id="sale_inher">
+               <div class="col-auto mw-100 mb-2">
+                    <div t-if="doc.expected_date" class="col-auto col-3 mw-100 mb-2" name="expected_date">
+                        <strong t-if="doc.expected_date">Expected Date:</strong>
+                        <strong t-else="">Expected Date:</strong>
+                        <p class="m-0" t-field="doc.expected_date" t-options='{"widget": "date"}'/>
+                    </div>
+               </div>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>

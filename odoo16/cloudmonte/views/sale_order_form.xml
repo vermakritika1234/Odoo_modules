@@ -1,0 +1,114 @@
+<odoo>
+    <data>
+
+
+
+        <!-- <record id="custom_model_form" model="ir.ui.view">
+            <field name="name">custom.form.model</field>
+            <field name="model">custom.model</field>
+            <field name="arch" type="xml">
+                <form string="Tags">
+                    <sheet>
+                        <group>
+                            <field name="age"/>
+                            <field name="name"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="account_tag_view_tree" model="ir.ui.view">
+            <field name="name">Tags</field>
+            <field name="model">account.account.tag</field>
+            <field name="arch" type="xml">
+                <tree string="Tags">
+                    <field name="name"/>
+                    <field name="applicability"/>
+                </tree>
+            </field>
+        </record> -->
+
+
+    <record id="custom_model_form" model="ir.ui.view">
+        <field name="name">custom.form.model</field>
+        <field name="model">custom.model</field>
+        <field name="arch" type="xml">
+            <form string="Custom model">
+                <sheet name='User Profile'>
+                <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <!-- <field name="sale_partner_id"/> -->
+                </group>
+             </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="custom_model_tree" model="ir.ui.view">
+        <field name="name">custom.model.tree</field>
+        <field name="model">custom.model</field>
+        <field name="arch" type="xml">
+            <tree string="Variant Values">
+                    <field name="name" />
+                            <field name="age"/>
+                            <!-- <field name="sale_partner_id"/> -->
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="custom_model_action" model="ir.actions.act_window">
+        <field name="name">User profile</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">custom.model</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    
+<!-- 
+        <record id="sale_view_order_form_inherit" model="ir.ui.view">
+            <field name="name">sale.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='validity_date']" position="after">
+                    <field name="cycle_id" readonly="1"/>
+                </xpath>
+            </field>
+        </record> -->
+
+
+   <!-- <record id="view_order_form_inherit_sale" model="ir.ui.view">
+            <field name="name">sale.order.line.tree.sale.</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <xpath expr="//page/field[@name='order_line']/tree/field[@name='name']" position="after">
+                    <field name="expected_date"/>
+                </xpath>
+            </field>
+        </record> -->
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="Custom model" id="cloudmonte.menu_root"/>
+
+    <!-- menu categories -->
+
+    <!-- <menuitem name="Employee Profile" id="hrm_attendance.menu_1" parent="hrm_attendance.menu_root"/> -->
+
+    <!-- <menuitem name="Attendance" id="hrm_attendance.menu_2" parent="hrm_attendance.menu_root"/> -->
+    <!-- <menuitem name="Menu 2" id="hrm_attendance.menu_2" parent="hrm_attendance.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="custom model form" id="cloudmonte.menu_1_list" parent="cloudmonte.menu_root"
+              action="custom_model_action"/>
+
+
+
+    </data>
+</odoo>

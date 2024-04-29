@@ -1,0 +1,30 @@
+<odoo>
+  <data>
+
+
+    <record id="view_tree_sale_order_inherit_for_automatic_so" model="ir.ui.view">
+        <field name="name">sale.order.tree.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <button name="automatic_sale_order"
+                        type="object"
+                        string="Automatic SaleOrder"
+                        class="oe_highlight"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <!-- Top menu item -->
+    <record id="action_dashboard_sale_orders" model="ir.actions.client">
+      <field name="name">Sales Order</field>
+      <field name="tag">Sales_order_dashboard</field>
+   </record>
+
+    <menuitem name="OWL SALES DASHBOARD" id="owl_dashboard" action="owl_dashboard.action_dashboard_sale_orders" parent="sale.sale_menu_root" sequence="2"/>
+
+
+  </data>
+</odoo>

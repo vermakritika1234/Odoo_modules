@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_profile_info,hrm_attendance.profile_info,model_profile_info,base.group_user,1,1,1,1
+access_hrm_department,hrm_department,model_hrm_department,,1,1,1,1

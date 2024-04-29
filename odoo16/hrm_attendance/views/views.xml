@@ -1,0 +1,172 @@
+<odoo>
+  <data>
+<!--Basic Information-->
+      <record id="form_profile_information" model="ir.ui.view">
+        <field name="name">profile.info.form</field>
+        <field name="model">profile_info</field>
+        <field name="arch" type="xml">
+            <form string="Product Attribute">
+          
+            <sheet name='User Profile'>
+              <group>
+                  <group>
+                    <field name="name"/>
+                    <field name="designation"/>                    
+                    <field name="department" /> 
+                    <field name="age" />
+                    <field name="adhar" />
+                      <field name="guidance_name"  />
+                      <field name="guidance_phone"  />
+                  </group>
+
+                   <group>
+                     <field name="photo" widget="image" class="oe_avatar"/>
+                     <field name="salary_inhand" />
+                    <field name="salary_gross" />
+                    <field name="phone" />
+                   </group>
+
+                   <notebook>
+                     <page string="Employee Old Experience">
+                     
+                        <group>
+                          <field name="experience"/>
+                          <field name="year_n_month"/>
+                          <field name="company_name"/>
+                          </group>
+                          <group>
+                          <field name="profile"/>
+                          <field name="salary"/>
+                          <field name="adhar"/>
+              
+                       </group>
+                     </page>
+
+                       <page string="Employee Skills Experience">
+                     
+                        <group>
+                          <field name="graduation"/>
+                          <field name="skills"/>
+                          <field name="additional_skill"/>
+                          </group>
+                          <group>
+                          <field name="course"/>
+                          <field name="certificates"/>              
+                       </group>
+                     </page>
+                   </notebook>
+
+                
+
+              </group>
+
+
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tree_profile_information" model="ir.ui.view">
+        <field name="name">profile.info.tree</field>
+        <field name="model">profile_info</field>
+        <field name="arch" type="xml">
+            <tree string="Variant Values">
+             <field name="name" />
+            <field name="designation" />
+             <field name="department" /> 
+            <field name="age" />
+            <field name="adhar" />
+            <field name="experience"/>
+            <field name="profile"/>
+
+ 
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="profile_info_action" model="ir.actions.act_window">
+        <field name="name">User profile</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">profile_info</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!--Department information-->
+      <record id="hrm_department" model="ir.ui.view">
+        <field name="name">hrm_department</field>
+        <field name="model">hrm_department</field>
+        <field name="arch" type="xml">
+            <form string="Department">
+              <group>
+                <sheet>
+                  <field name="department"/>
+                </sheet>
+              </group>
+            </form>
+          </field>
+        </record>
+    <!-- explicit list view definition -->
+
+    <!-- <record model="ir.ui.view" id="hrm_attendance.list">
+      <field name="name">hrm_attendance list</field>
+      <field name="model">hrm_attendance.hrm_attendance</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record> -->
+
+
+    <!-- actions opening views on models -->
+
+    <!-- <record model="ir.actions.act_window" id="hrm_attendance.action_window">
+      <field name="name">hrm_attendance window</field>
+      <field name="res_model">hrm_attendance.hrm_attendance</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="hrm_attendance.action_server">
+      <field name="name">hrm_attendance server</field>
+      <field name="model_id" ref="model_hrm_attendance_hrm_attendance"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="hrm_attendance" id="hrm_attendance.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Employee Profile" id="hrm_attendance.menu_1" parent="hrm_attendance.menu_root"/>
+
+    <menuitem name="Attendance" id="hrm_attendance.menu_2" parent="hrm_attendance.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="hrm_attendance.menu_2" parent="hrm_attendance.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="List" id="hrm_attendance.menu_1_list" parent="hrm_attendance.menu_1"
+              action="profile_info_action"/>
+
+    <menuitem name="attendance" id="hrm_attendance.menu_2_list" parent="hrm_attendance.menu_2"
+              action="profile_info_action"/>
+    <!-- <menuitem name="Server to list" id="hrm_attendance" parent="hrm_attendance.menu_2"
+              action="hrm_attendance.action_server"/> -->
+
+  </data>
+</odoo>

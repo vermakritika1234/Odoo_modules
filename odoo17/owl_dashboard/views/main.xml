@@ -1,0 +1,13 @@
+<odoo>
+  <template id="subjects">
+    <title>Academy</title>
+        <table style="width:100%">
+            <t t-foreach="subjects" t-as="subject">
+                 <tr>
+                    <td><t t-esc="subject"/></td>
+                    <td>Blank</td>
+                </tr>
+            </t>
+        </table>
+  </template>
+</odoo>

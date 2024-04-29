@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+     <record id="group_library_access_to_users" model="ir.module.category">
+        <field name="name">Library Access (from huft)</field>
+        <!-- <field name="category_id" ref="base.module_category_hidden"/> -->
+    </record>
+
+    <record id="group_students_access" model="res.groups">
+        <field name="name">HUFT/Student Groups</field>
+         <field name="category_id" ref="group_library_access_to_users"/>
+    </record>
+
+    <record id="group_teacher_access" model="res.groups">
+        <field name="name">HUFT/Teacher Groups</field>
+         <field name="category_id" ref="group_library_access_to_users"/>
+        <field name="implied_ids" eval="[(4, ref('group_students_access'))]"/>
+    </record>
+
+</odoo>

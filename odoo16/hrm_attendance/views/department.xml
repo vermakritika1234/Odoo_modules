@@ -1,0 +1,62 @@
+<odoo>
+  <data>
+<!--Basic Information-->
+
+<!--Department information-->
+      <record id="hrm_department_form" model="ir.ui.view">
+        <field name="name">hrm_department</field>
+        <field name="model">hrm_department</field>
+        <field name="arch" type="xml">
+            <form string="Department">
+            <sheet>
+              <group>
+                  <field name="department"/>
+              </group>
+            </sheet>
+            </form>
+          </field>
+        </record>
+
+    <record id="hrm_department_tree" model="ir.ui.view">
+        <field name="name">hrm_department</field>
+        <field name="model">hrm_department</field>
+        <field name="arch" type="xml">
+            <tree string="department Values">
+             <!-- <field name="id" /> -->
+               <field name="department"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hrm_department_action" model="ir.actions.act_window">
+        <field name="name">hrm_department</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hrm_department</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <!-- <menuitem name="Departments" id="hrm_attendance.menu_root"/> -->
+
+    <!-- menu categories -->
+
+    <menuitem name="Departments" id="hrm_attendance.menu_department_1" parent="hrm_attendance.menu_root"/>
+
+    <!-- <menuitem name="Attendance" id="hrm_attendance.menu_2" parent="hrm_attendance.menu_root"/> -->
+    <!-- <menuitem name="Menu 2" id="hrm_attendance.menu_2" parent="hrm_attendance.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="departments" id="hrm_attendance.menu_department_2" parent="hrm_attendance.menu_department_1"
+              action="hrm_department_action"/>
+
+    <!-- <menuitem name="attendance" id="hrm_attendance.menu_2_list" parent="hrm_attendance.menu_2"
+              action="profile_info_action"/> -->
+    <!-- <menuitem name="Server to list" id="hrm_attendance" parent="hrm_attendance.menu_2"
+              action="hrm_attendance.action_server"/> -->
+
+  </data>
+</odoo>

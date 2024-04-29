@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+ <record model="ir.ui.view" id="students_students">
+      <field name="name">students_students</field>
+      <field name="model">students.students</field>
+      <field name="arch" type="xml">
+        <form>
+         <sheet>
+          <!-- <header>
+           <button name="%(action_wizardxml_to_viewxml)d" type="action" string="Wizard button" data-hotkey="w"/>
+             </header> -->
+           <group>
+              <field name="name"/>
+              <field name="class_name"/>
+              <field name="book_issue"/>
+              <field name="date_from"/>
+              <field name="date_to"/>
+              <field name="duration"/>
+          </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+     <record model="ir.ui.view" id="students_students_tree">
+      <field name="name">students_students</field>
+      <field name="model">students.students</field>
+      <field name="arch" type="xml">
+        <tree>
+             <field name="name"/>
+              <field name="class_name"/>
+              <field name="book_issue"/>
+              <field name="date_from"/>
+              <field name="date_to"/>
+              <field widget='badge'  decoration-danger= "duration == 'booked'" decoration-success= "duration == 'available'" name="duration"/>
+          </tree>
+      </field>
+    </record>
+
+     <record model="ir.actions.act_window" id="action_create_students_students">
+      <field name="name">Students</field>
+      <field name="res_model">students.students</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+   
+
+    <!-- <menuitem name="My menu" id="headsuptail.menu_root2"/>
+
+      <menuitem name="Books" id="books_books" sequence="1"  action="action_create_books_books"/> -->
+  </data>
+</odoo>

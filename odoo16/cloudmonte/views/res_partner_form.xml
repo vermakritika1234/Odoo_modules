@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="view_res_partner_form" model="ir.ui.view">
+            <field name="name">Res partner form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='function']" position="after">
+                    <field name="loyalty_points" string="Loyalty points" />
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

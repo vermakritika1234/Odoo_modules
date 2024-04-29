@@ -1,0 +1,119 @@
+  <odoo>
+    <data>
+      <!-- explicit list view definition -->
+  <!--
+      <record model="ir.ui.view" id="headsuptail.list">
+        <field name="name">headsuptail list</field>
+        <field name="model">headsuptail.headsuptail</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="name"/>
+            <field name="value"/>
+            <field name="value2"/>
+          </tree>
+        </field>
+      </record>
+  -->
+
+      <!-- actions opening views on models -->
+  <!--
+      <record model="ir.actions.act_window" id="headsuptail.action_window">
+        <field name="name">headsuptail window</field>
+        <field name="res_model">headsuptail.headsuptail</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  -->
+
+      <!-- server action to the one above -->
+  <!--
+      <record model="ir.actions.server" id="headsuptail.action_server">
+        <field name="name">headsuptail server</field>
+        <field name="model_id" ref="model_headsuptail_headsuptail"/>
+        <field name="state">code</field>
+        <field name="code">
+          action = {
+            "type": "ir.actions.act_window",
+            "view_mode": "tree,form",
+            "res_model": model._name,
+          }
+        </field>
+      </record>
+  -->
+
+      <!-- Top menu item -->
+  <!--
+      <menuitem name="headsuptail" id="headsuptail.menu_root"/>
+  -->
+      <!-- menu categories -->
+  <!--
+      <menuitem name="Menu 1" id="headsuptail.menu_1" parent="headsuptail.menu_root"/>
+      <menuitem name="Menu 2" id="headsuptail.menu_2" parent="headsuptail.menu_root"/>
+  -->
+      <!-- actions -->
+  <!--
+      <menuitem name="List" id="headsuptail.menu_1_list" parent="headsuptail.menu_1"
+                action="headsuptail.action_window"/>
+      <menuitem name="Server to list" id="headsuptail" parent="headsuptail.menu_2"
+                action="headsuptail.action_server"/>
+  -->
+
+  <record model="ir.ui.view" id="user_registration">
+        <field name="name">User Registration</field>
+        <field name="model">user.registration</field>
+        <field name="arch" type="xml">
+          <form>
+          <sheet>
+            <header>
+            <button name="%(action_wizardxml_to_viewxml)d" type="action" string="Wizard button" data-hotkey="w"/>
+              </header>
+            <group>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="designation"/>
+                <field name="books_record_ids" editable='bottom'/>
+                <field name="books_data_ids"/>
+            </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+
+      <record model="ir.ui.view" id="user_registration_tree">
+        <field name="name">User Registration Tree</field>
+        <field name="model">user.registration</field>
+        <field name="arch" type="xml">
+          <tree>
+                <field name="name"/>
+                <field name="age"/>
+                <field name="designation"/>
+                <field name="books_record_ids"/>
+                <field name="books_data_ids"/>
+
+            </tree>
+        </field>
+      </record>
+
+      <record model="ir.actions.act_window" id="action_user_register">
+        <field name="name">headsuptail window</field>
+        <field name="res_model">user.registration</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+    
+
+      <menuitem name="headsuptail" id="headsuptail.menu_root"/>
+
+        <menuitem name="User Registration" id="register" parent="headsuptail.menu_root"
+                action="action_user_register"/>
+
+        
+        <menuitem name="Books" id="create_books" parent="headsuptail.menu_root"
+                action="action_create_books_books"/>
+
+        <menuitem name="Students" id="create_students_students" parent="headsuptail.menu_root"
+                action="action_create_students_students"/>
+
+        
+        <menuitem name="Teacher" id="create_teacher_teacher" parent="headsuptail.menu_root"
+                action="action_create_teacher_teacher"/>
+    </data>
+  </odoo>

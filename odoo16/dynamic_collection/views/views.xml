@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="dynamic_collection.list">
+      <field name="name">Dynamic_collection list</field>
+      <field name="model">dynamic_collection.dynamic_collection</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="dynamic_collection.action_window">
+      <field name="name">Dynamic_collection window</field>
+      <field name="res_model">dynamic_collection.dynamic_collection</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="dynamic_collection.action_server">
+      <field name="name">Dynamic_collection server</field>
+      <field name="model_id" ref="model_dynamic_collection_dynamic_collection"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Dynamic_collection" id="dynamic_collection.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="dynamic_collection.menu_1" parent="dynamic_collection.menu_root"/>
+    <menuitem name="Menu 2" id="dynamic_collection.menu_2" parent="dynamic_collection.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="dynamic_collection.menu_1_list" parent="dynamic_collection.menu_1"
+              action="dynamic_collection.action_window"/>
+    <menuitem name="Server to list" id="dynamic_collection" parent="dynamic_collection.menu_2"
+              action="dynamic_collection.action_server"/>
+
+  </data>
+</odoo>

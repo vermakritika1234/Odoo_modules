@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+         <record id="form_to_open_wizard" model="ir.ui.view">
+            <field name="name">open.wizard</field>
+            <field name="model">open.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Issue your book">
+                    <group>
+                        <field name="department"/>
+                    </group>
+                    <field name="books_issued" string="book issued" />
+                    <footer>
+                        <button name="action_to_create_wizard" string="Submit" type="object" class="btn-primary" data-hotkey="q"/>
+                        <!-- <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/> -->
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_wizardxml_to_viewxml" model="ir.actions.act_window">
+            <field name="name">Wizard  action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">open.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="form_to_open_wizard"/>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</odoo>
